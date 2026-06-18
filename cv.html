@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rudresh Naik — CV</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --text: #111;
+      --muted: #444;
+      --dim: #888;
+      --border: #ddd;
+      --light: #f5f5f5;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: #e8e8e8;
+      color: var(--text);
+      line-height: 1.6;
+      padding: 2.5rem 1.5rem;
+    }
+
+    .page {
+      background: #fff;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 3rem 3.5rem;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    }
+
+    /* ── Header ── */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 2px solid var(--text);
+      margin-bottom: 1.8rem;
+      flex-wrap: wrap;
+    }
+
+    h1 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+    }
+
+    .header-role {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-top: 0.3rem;
+    }
+
+    .contact-block {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.2rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .contact-block a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    /* ── Section ── */
+    .section {
+      margin-bottom: 1.6rem;
+    }
+
+    .section-title {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--dim);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.3rem;
+      margin-bottom: 1rem;
+    }
+
+    /* ── About ── */
+    .about-text {
+      font-size: 0.87rem;
+      color: var(--muted);
+    }
+
+    /* ── Skills ── */
+    .skills-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+    }
+
+    .skill-tag {
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 0.2rem 0.55rem;
+      font-size: 0.76rem;
+      color: var(--muted);
+    }
+
+    /* ── Experience ── */
+    .exp-item {
+      margin-bottom: 1.2rem;
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .exp-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .exp-duration {
+      font-size: 0.78rem;
+      color: var(--dim);
+      white-space: nowrap;
+    }
+
+    .exp-company {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+      margin-top: 0.1rem;
+    }
+
+    .exp-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .exp-list li {
+      font-size: 0.84rem;
+      color: var(--muted);
+      padding-left: 0.9rem;
+      position: relative;
+    }
+
+    .exp-list li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      color: var(--dim);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .exp-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-top: 0.7rem;
+    }
+
+    /* ── Projects ── */
+    .project-item {
+      margin-bottom: 0.9rem;
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .project-title {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .project-meta {
+      font-size: 0.75rem;
+      color: var(--dim);
+    }
+
+    .project-body {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+    }
+
+    /* ── Print ── */
+    @media print {
+      body {
+        background: none;
+        padding: 0;
+      }
+
+      .page {
+        box-shadow: none;
+        padding: 2rem 2.5rem;
+        max-width: 100%;
+      }
+
+      .no-print { display: none; }
+    }
+
+    /* ── Print button (screen only) ── */
+    .print-btn {
+      display: block;
+      max-width: 760px;
+      margin: 0 auto 1rem;
+      text-align: right;
+    }
+
+    .print-btn button {
+      background: #111;
+      color: #fff;
+      border: none;
+      padding: 0.45rem 1rem;
+      font-size: 0.8rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .print-btn button:hover { background: #333; }
+
+    @media (max-width: 520px) {
+      .page { padding: 2rem 1.5rem; }
+      .contact-block { align-items: flex-start; }
+      header { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-btn no-print">
+    <button onclick="window.print()">Save as PDF</button>
+  </div>
+
+  <div class="page">
+
+    <!-- Header -->
+    <header>
+      <div>
+        <h1>Rudresh Naik</h1>
+        <p class="header-role">Backend Software Engineer &mdash; 5+ years experience</p>
+      </div>
+      <div class="contact-block">
+        <a href="mailto:rudreshnaik17@gmail.com">rudreshnaik17@gmail.com</a>
+        <a href="https://github.com/ruddesh" target="_blank" rel="noopener">github.com/ruddesh</a>
+        <span>IN +91 83299 57278</span>
+        <span>TW 0930 801 296</span>
+      </div>
+    </header>
+
+    <!-- About -->
+    <div class="section">
+      <p class="section-title">Profile</p>
+      <p class="about-text">
+        Backend Software Engineer with 5+ years of experience designing and maintaining web applications, APIs, search systems, and cloud infrastructure.
+        Experienced in PHP, Laravel, MySQL, Elasticsearch, and Google Cloud Platform.
+        Proven track record of building business-critical systems for a US-based legal lead generation platform.
+        Experienced with AI-assisted development workflows and tools such as Claude Code to accelerate implementation, debugging, refactoring, documentation, and code reviews while maintaining ownership of architecture, code quality, and production systems.
+      </p>
+    </div>
+
+    <!-- Skills -->
+    <div class="section">
+      <p class="section-title">Technical Skills</p>
+      <table style="width:100%;border-collapse:collapse;font-size:0.83rem;">
+        <tr>
+          <td style="padding:0.2rem 0;color:#888;width:9rem;vertical-align:top;"><strong style="color:#444;">Languages</strong></td>
+          <td style="padding:0.2rem 0;color:#555;">PHP, JavaScript, Python, SQL</td>
+        </tr>
+        <tr>
+          <td style="padding:0.2rem 0;color:#888;vertical-align:top;"><strong style="color:#444;">Frameworks</strong></td>
+          <td style="padding:0.2rem 0;color:#555;">Laravel, React, Next.js</td>
+        </tr>
+        <tr>
+          <td style="padding:0.2rem 0;color:#888;vertical-align:top;"><strong style="color:#444;">Databases &amp; Search</strong></td>
+          <td style="padding:0.2rem 0;color:#555;">MySQL, PostgreSQL, Elasticsearch</td>
+        </tr>
+        <tr>
+          <td style="padding:0.2rem 0;color:#888;vertical-align:top;"><strong style="color:#444;">Cloud &amp; Infra</strong></td>
+          <td style="padding:0.2rem 0;color:#555;">Google Cloud Platform, Docker, Git</td>
+        </tr>
+        <tr>
+          <td style="padding:0.2rem 0;color:#888;vertical-align:top;"><strong style="color:#444;">Developer Tools</strong></td>
+          <td style="padding:0.2rem 0;color:#555;">Claude Code, AI-Assisted Development</td>
+        </tr>
+        <tr>
+          <td style="padding:0.2rem 0;color:#888;vertical-align:top;"><strong style="color:#444;">Integrations</strong></td>
+          <td style="padding:0.2rem 0;color:#555;">Google Ads API, Twilio, Stripe, DocuSign, SendGrid, REST APIs</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Experience -->
+    <div class="section">
+      <p class="section-title">Experience</p>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <p class="exp-title">Software Developer</p>
+          <p class="exp-duration">March 2021 – June 2026</p>
+        </div>
+        <p class="exp-company">accident.com &mdash; US Client &middot; Legal / Lead Generation</p>
+        <ul class="exp-list">
+          <li>Built and maintained a Laravel-based lead management platform used to acquire, qualify, distribute, and sell personal injury leads to law firms across the United States.</li>
+          <li>Designed and developed REST APIs supporting lead ingestion, routing, qualification, and partner integrations.</li>
+          <li>Implemented Elasticsearch-powered search functionality and lead scoring systems across large datasets.</li>
+          <li>Integrated Google Ads API and attribution pipelines to connect marketing performance with lead generation outcomes.</li>
+          <li>Developed reporting and analytics solutions using BigQuery and internal data pipelines.</li>
+          <li>Worked extensively with Google Cloud Platform services including Cloud Storage, Cloud Scheduler, Secret Manager, and automation workflows.</li>
+          <li>Built integrations with Twilio, Stripe, DocuSign, and SendGrid.</li>
+          <li>Optimized database queries and application performance across production systems.</li>
+          <li>Collaborated directly with US-based stakeholders to gather requirements and deliver business-critical features.</li>
+          <li>Leveraged Claude Code and AI-assisted development workflows to accelerate feature delivery, debugging, refactoring, documentation, and code reviews.</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="skill-tag">PHP</span>
+          <span class="skill-tag">Laravel</span>
+          <span class="skill-tag">Elasticsearch</span>
+          <span class="skill-tag">Google Cloud</span>
+          <span class="skill-tag">BigQuery</span>
+          <span class="skill-tag">Google Ads API</span>
+          <span class="skill-tag">Twilio</span>
+          <span class="skill-tag">Stripe</span>
+          <span class="skill-tag">DocuSign</span>
+          <span class="skill-tag">SendGrid</span>
+          <span class="skill-tag">REST APIs</span>
+          <span class="skill-tag">MySQL</span>
+          <span class="skill-tag">JavaScript</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Projects -->
+    <div class="section">
+      <p class="section-title">Projects</p>
+
+      <div class="project-item">
+        <div class="project-header">
+          <p class="project-title">Chinese Learning Chatbot</p>
+          <p class="project-meta">Python &middot; 2026 &middot; Personal</p>
+        </div>
+        <p class="project-body">
+          Developed a chatbot for practicing Mandarin Chinese while studying in Taiwan as a self-directed project to expand experience beyond the PHP/Laravel ecosystem.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
